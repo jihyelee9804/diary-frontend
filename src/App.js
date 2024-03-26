@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+// // "./util" 파일에서 getEmotionImgById 변수를 import 한다.
+// import { getEmotionImgById } from "./util";
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
+import Home from "./pages/Home";
+import Diary from "./pages/Diary";
+import Edit from "./pages/Edit";
+import New from "./pages/New";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        {/* Route 컴포넌트의 path 속성과 element 속성을 지정한다. */}
+        <Route path="/" element={<Home />} />
+        <Route path="/new" element={<New />} />
+        <Route path="/diary" element={<Diary />} />
+        <Route path="/edit" element={<Edit />} />
+      </Routes>
     </div>
   );
 }
